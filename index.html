@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Form</title>
 </head>
 <body>
@@ -15,167 +16,200 @@
     <main class="main" id="main">
         <section class="section" id="formSection">
             <form action="#" class="form" id="guitarForm">
-                <h2 class="form-heading text-center text-capitalize">
+                <h2 class="form-heading text-center text-capitalize"> 
                     enter a guitar 
+                    <!-- i know the a isn't supposed to be capitalized  -->
                 </h2>
-            <div class="row">
-                <div class="col">
-                    <div class="form-floating">
-                        <input 
-                            type="text"
-                            id="guitarName"
-                            name="guitarName"
-                            class="form-control"
-                            value="" required
-                        />
-                        <label 
-                            for="guitarName"
-                            class="form-label text-uppercase">name
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input 
+                                type="text"
+                                id="guitarName"
+                                name="guitarName"
+                                class="form-control"
+                                value="" required
+                            />
+                            <label 
+                                for="guitarName"
+                                class="form-label text-uppercase">name
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="bodyType">
+                                Select Body Type
+                            </label>
+                            <select class="form-select" id="bodyType" name="bodyType">
+                                <option>--Body Type--</option>
+                                <option value="solidBody">Solid Body</option>
+                                <option value="semiHollow">Semi-Hollow</option>
+                                <option value="hollowBody">Hollow Body</option>
+                                <option value="acoustic">Acoustic</option>
+                            </select>
+                            <!-- struggling to get the text inside of the option to display instead of the value of the option -->
+                        </div>
+                        
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input 
+                                type="number" 
+                                id="numFrets" 
+                                name="numFrets" 
+                                min="0" max="24"
+                                class="form-control"
+                                value=""
+                            /> 
+                            <label for="numFrets" class="form-label">
+                                Number of frets
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col row-cols-sm-5">
+                        <div class="form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="scaleLength" 
+                                id="twentyFivePoint5" 
+                                value="25.5" 
+                                checked
+                            />
+                            <label class="form-check-label" for="twentyFivePoint5">
+                                25.5
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="scaleLength" 
+                                id="twentyFourAndThreeFourths" 
+                                value="24.75" 
+                            />
+                            <label class="form-check-label" for="twentyFourAndThreeFourths">
+                                24.75
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="scaleLength" 
+                                id="other" 
+                                value="other" 
+                            />
+                            <label class="form-check-label" for="other">
+                                other
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="singleCoilFender" 
+                                value="singleCoilFender"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="singleCoilFender">
+                                single coil (fender)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="pNinety" 
+                                value="pNinety"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="pNinety">
+                                p-90
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="filterTron" 
+                                value="filterTron"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="filterTron">
+                                filterTron
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="lipstick" 
+                                value="lipstick"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="lipstick">
+                                lipstick singlecoil (cool)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="humbuckerPAF" 
+                                value="humbuckerPAF"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="humbuckerPAF">
+                                humbucker (PAF)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="humbuckerActive" 
+                                value="humbuckerActive"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="humbuckerActive">
+                                humbucker (active)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="humbuckerMini" 
+                                value="humbuckerMini"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="humbuckerMini">
+                                humbucker (mini)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="piezo" 
+                                value="piezo"
+                                name="pickup"
+                            />
+                            <label class="form-check-label text-capitalize" for="piezo">
+                                piezo
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <select name="bodyType" id="bodyType">
-                        <option>--Body Type--</option>
-                        <option value="solidBody">Solid Body</option>
-                        <option value="semiHollow">Semi-Hollow</option>
-                        <option value="hollowBody">Hollow Body</option>
-                        <option value="acoustic">Acoustic</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <h3 class="form-subheading text-capitalize">scale length</h3>
-                    <div class="form-check-inline">
-                        <input 
-                            type="radio"
-                            class="form-check-input"
-                            name="scaleLength"
-                            id="25.5"
-                            value="25.5"
-                        />
-                        <label for="25.5" class="form-check-label">25.5</label>
-                    </div>
-                    <div class="form-check-inline">
-                        <input 
-                            type="radio"
-                            class="form-check-input"
-                            name="scaleLength"
-                            id="24.75"
-                            value="24.75"
-                        />
-                        <label for="24.75" class="form-check-label">24.75</label>
-                    </div>
-                    <div class="form-check-inline">
-                        <input 
-                            type="radio"
-                            class="form-check-input"
-                            name="scaleLength"
-                            id="scaleOther"
-                            value="scaleOther"
-                        />
-                        <label for="scaleOther" class="form-check-label">other</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <h3 class="form-subheading text-capitalize">Number of frets</h3>
-                    <div class="form-check">
-                        <input 
-                            type="text" 
-                            name="numFrets"
-                            id="numFrets"
-                            value=""
-                        />
-                        <label for="numFrets" class="form-label"># of frets</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <h3 class="form-subheading text-capitalize">pickups</h3>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="singleCoilFender"
-                            class="form-check-input"
-                            id="singleCoilFender"
-                        />
-                        <label for="singleCoilFender" class="form-check-label text-capitalize">single coil (fender)</label>
 
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="singleCoilLipstick"
-                            class="form-check-input"
-                            id="singleCoilLipstick"
-                        />
-                        <label for="singleCoilLipstick" class="form-check-label text-capitalize">single coil (lipstick)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="pNinety"
-                            class="form-check-input"
-                            id="pNinety"
-                        />
-                        <label for="pNinety" class="form-check-label text-capitalize">single coil (p-90)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="humbuckerPAF"
-                            class="form-check-input"
-                            id="humbuckerPAF"
-                        />
-                        <label for="humbuckerPAF" class="form-check-label text-capitalize">humbucker (PAF)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="humbuckerActive"
-                            class="form-check-input"
-                            id="humbuckerActive"
-                        />
-                        <label for="humbuckerActive" class="form-check-label text-capitalize">humbucker (active)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="humbuckerFiltertron"
-                            class="form-check-input"
-                            id="humbuckerFiltertron"
-                        />
-                        <label for="humbuckerFiltertron" class="form-check-label text-capitalize">humbucker (filtertron)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="humbuckerMini"
-                            class="form-check-input"
-                            id="humbuckerMini"
-                        />
-                        <label for="humbuckerMini" class="form-check-label text-capitalize">humbucker (mini)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input 
-                            type="checkbox"
-                            name="pickup"
-                            value="piezo"
-                            class="form-check-input"
-                            id="piezo"
-                        />
-                        <label for="piezo" class="form-check-label text-capitalize">piezo</label>
-                    </div>
                 </div>
-            </div> 
-            <div class="mb-3">
-                <button class="btn btn-primary text-capitalize" id="submitBtn">submit</button>
-            </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary text-capitalize" id="submitBtn">submit</button>
+                </div>
             </form>
         </section>
         <section class="section" id="cardSection">
